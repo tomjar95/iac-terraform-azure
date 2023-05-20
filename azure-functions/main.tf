@@ -23,3 +23,15 @@ resource "azurerm_app_service_plan" "just_learning" {
     size = var.app_service_plan_size
   }
 }
+
+resource "azurerm_linux_function_app" "just_learning" {
+  name                = var.function_app_name
+  resource_group_name = var.resource_group_name
+  location            = var.resource_group_location
+
+  storage_account_name       = var.storage_account_name
+  service_plan_id            = azurerm_app_service_plan.just_learning.id
+
+  site_config {}
+}
+

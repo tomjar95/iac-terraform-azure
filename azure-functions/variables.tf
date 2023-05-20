@@ -57,3 +57,13 @@ variable "app_service_plan_size" {
   type        = string
   default     = "S1"
 }
+
+variable "function_app_name" {
+  description = "Name of application's function"
+  type        = string
+  default     = "example-linux-function-app"
+}
+
+
+
+
