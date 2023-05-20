@@ -13,7 +13,7 @@ variable "resource_group_location" {
 variable "storage_account_name" {
   description = "Name of the storage account"
   type        = string
-  default     = "example-resources"
+  default     = "example"
 }
 
 variable "storage_account_tier" {
