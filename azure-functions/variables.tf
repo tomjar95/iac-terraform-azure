@@ -27,3 +27,33 @@ variable "storage_account_replication_type" {
   type        = string
   default     = "GRS"
 }
+
+variable "app_service_plan_name" {
+  description = "Name of application service plan"
+  type        = string
+  default     = "justAnotherName"
+}
+
+variable "app_service_plan_kind" {
+  description = "Kind of application service plan"
+  type        = string
+  default     = "Linux"
+}
+
+variable "app_service_plan_reserved" {
+  description = "Kind of application service plan"
+  type        = string
+  default     = "true"
+}
+
+variable "app_service_plan_tier" {
+  description = "Tier of application service plan"
+  type        = string
+  default     = "Standard"
+}
+
+variable "app_service_plan_size" {
+  description = "Size of application service plan"
+  type        = string
+  default     = "S1"
+}

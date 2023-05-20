@@ -10,3 +10,16 @@ resource "azurerm_storage_account" "just_learning" {
   account_tier             = var.storage_account_tier
   account_replication_type = var.storage_account_replication_type
 }
+
+resource "azurerm_app_service_plan" "just_learning" {
+  name                = var.app_service_plan_name
+  location            = var.resource_group_location
+  resource_group_name = var.resource_group_name
+  kind                = var.app_service_plan_kind
+  reserved            = var.app_service_plan_reserved
+
+  sku {
+    tier = var.app_service_plan_tier
+    size = var.app_service_plan_size
+  }
+}
