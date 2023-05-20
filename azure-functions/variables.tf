@@ -64,6 +64,46 @@ variable "function_app_name" {
   default     = "example-linux-function-app"
 }
 
+variable "function_name" {
+  description = "Name of the function app function"
+  type        = string
+  default     = "example-function-app-function"
+}
+
+variable "language" {
+  description = "Programming language of the function"
+  type        = string
+  default     = "Python"
+}
+
+variable "test_data" {
+  description = "Test data for the function"
+  type        = map(any)
+  default     = {
+    "name" = "Azure"
+  }
+}
+
+variable "config_json" {
+  description = "Configuration JSON for the function"
+  type        = map(any)
+  default     = {
+    "bindings" = [
+      {
+        "authLevel" = "function"
+        "direction" = "in"
+        "methods"   = ["get", "post"]
+        "name"      = "req"
+        "type"      = "httpTrigger"
+      },
+      {
+        "direction" = "out"
+        "name"      = "$return"
+        "type"      = "http"
+      },
+    ]
+  }
+}
 
 
 

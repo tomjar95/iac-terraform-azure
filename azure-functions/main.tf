@@ -35,3 +35,10 @@ resource "azurerm_linux_function_app" "just_learning" {
   site_config {}
 }
 
+resource "azurerm_function_app_function" "just_learning" {
+  name            = var.function_name
+  function_app_id = azurerm_linux_function_app.just_learning.id
+  language        = var.language
+  test_data       = jsonencode(var.test_data)
+  config_json     = jsonencode(var.config_json)
+}
