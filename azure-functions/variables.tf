@@ -13,7 +13,7 @@ variable "resource_group_location" {
 variable "storage_account_name" {
   description = "Name of the storage account"
   type        = string
-  default     = "example"
+  default     = "test9508storage"
 }
 
 variable "storage_account_tier" {
@@ -41,7 +41,7 @@ variable "app_service_plan_kind" {
 }
 
 variable "app_service_plan_reserved" {
-  description = "Kind of application service plan"
+  description = "Is the application service plan reserved"
   type        = string
   default     = "true"
 }
@@ -61,13 +61,13 @@ variable "app_service_plan_size" {
 variable "function_app_name" {
   description = "Name of application's function"
   type        = string
-  default     = "example-linux-function-app"
+  default     = "function95-app08-test3"
 }
 
 variable "function_name" {
   description = "Name of the function app function"
   type        = string
-  default     = "example-function-app-function"
+  default     = "just-for-testing2"
 }
 
 variable "language" {

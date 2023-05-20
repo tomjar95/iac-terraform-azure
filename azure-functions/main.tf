@@ -32,7 +32,11 @@ resource "azurerm_linux_function_app" "just_learning" {
   storage_account_name       = var.storage_account_name
   service_plan_id            = azurerm_app_service_plan.just_learning.id
 
-  site_config {}
+  site_config {
+    application_stack {
+      python_version = "3.9"
+    }
+  }
 }
 
 resource "azurerm_function_app_function" "just_learning" {
