@@ -42,7 +42,7 @@ variable "app_service_plan_kind" {
 
 variable "app_service_plan_reserved" {
   description = "Is the application service plan reserved"
-  type        = string
+  type        = bool
   default     = "true"
 }
 
@@ -105,5 +105,8 @@ variable "config_json" {
   }
 }
 
-
-
+variable "python_version" {
+  description = "Python version"
+  type        = string
+  default     = "3.9"
+}
