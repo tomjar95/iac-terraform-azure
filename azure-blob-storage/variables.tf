@@ -37,17 +37,23 @@ variable "storage_container_name" {
 variable "storage_container_access_type" {
   description = "Access type of storage container"
   type        = string
-  default     = "private"
+  default     = "container"
 }
 
 variable "storage_blob_name" {
   description = "Name of storage blob"
   type        = string
-  default     = "my-awesome-content.zip"
+  default     = "azure"
 }
 
 variable "storage_blob_type" {
   description = "Type of storage blob"
   type        = string
   default     = "Block"
+}
+
+variable "storage_blob_files" {
+  description = "Additional files"
+  type = list(string)
+  default = ["D:/Tomek/azure.png", "D:/Tomek/azure2.png"]
 }

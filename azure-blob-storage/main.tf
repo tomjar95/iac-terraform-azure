@@ -18,8 +18,11 @@ resource "azurerm_storage_container" "just_learning" {
 }
 
 resource "azurerm_storage_blob" "just_learning" {
-  name                   = var.storage_blob_name
+  count                  = length(var.storage_blob_files)
+  name                   = "${var.storage_blob_name}-${count.index}.png"
   storage_account_name   = azurerm_storage_account.just_learning.name
   storage_container_name = azurerm_storage_container.just_learning.name
   type                   = var.storage_blob_type
+  source                 = var.storage_blob_files[count.index]
 }
+

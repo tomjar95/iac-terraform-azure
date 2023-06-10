@@ -1,3 +1,3 @@
-output "azurem_storage_blob" {
-  value = azurem_storage_blob.just_learning.url
+output "azurerm_storage_blob" {
+  value = [for i in azurerm_storage_blob.just_learning : i.url]
 }
